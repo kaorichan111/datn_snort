@@ -1334,7 +1334,7 @@ void check_connections()
         std:: cout << "flow so " << ++dem << "nay co thoi luong la " << duration << std::endl;
 
         /* Assuming a default timeout value of 12 sec. */
-        if (time_difference > 12000000 || duration > 12000000)
+        if (time_difference > 1200000 || duration > 12000000)
         {
             ml_mutex.lock();
 
@@ -1374,7 +1374,7 @@ void check_connections()
 
 /*
     Thread's run function.
-    Runs every 20 sec.
+    Runs every 2 sec.
 */
 void verify_timeouts()
 {

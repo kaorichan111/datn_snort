@@ -110,7 +110,7 @@ void MLClassifiers::eval(Packet* p)
 
 static const Parameter ml_params[] =
 {
-    { "key", Parameter::PT_SELECT, "ab | dt ","rf", "machine learning classifier" },
+    { "key", Parameter::PT_SELECT, "ab | dt ","ab", "machine learning classifier" },
     { nullptr, Parameter::PT_MAX, nullptr, nullptr, nullptr }
 };
 

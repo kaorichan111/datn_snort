@@ -5,7 +5,7 @@ set (CMAKE_CXX_STANDARD 14)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set (CMAKE_CXX_EXTENSIONS OFF)
 
-set (CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "/home/minh/Downloads/boost_1_67_0")
+#set (CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "/home/minh/Downloads/boost_1_67_0")
 #set (CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "/usr/include/python3.7")
 
 if ( APPLE )

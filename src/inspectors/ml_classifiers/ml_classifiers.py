@@ -5,10 +5,8 @@ import numpy as np
 
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
-from sklearn.svm import LinearSVC
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.naive_bayes import BernoulliNB, GaussianNB, MultinomialNB
-from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
+from sklearn.ensemble import AdaBoostClassifier
 
 from joblib import dump, load
 import addrulessnort
@@ -24,7 +22,7 @@ if __name__ == '__main__':
     output_file = open (my_path + 'tmp/timeouted_connections_results.txt', 'w')
     joblibs_folder = 'newjoblibs/'
 
-    clf_joblibs = {'svc':'clf_svc.joblib', 'ab':'clf_ab.joblib', 'dt':'clf_dt.joblib', 'rf':'clf_rf.joblib', 'bnb':'clf_bnb.joblib', 'gnb':'clf_gnb.joblib'}
+    clf_joblibs = {'ab':'clf_ab.joblib', 'dt':'clf_dt.joblib'}
     #clf = load(my_path + 'joblibs/' + clf_joblibs[sys.argv[1]])
     clf = load(my_path + joblibs_folder + clf_joblibs[sys.argv[1]])
     scaler = load(my_path + joblibs_folder + 'scaler.joblib')
