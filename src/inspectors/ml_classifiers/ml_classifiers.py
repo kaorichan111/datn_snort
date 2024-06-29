@@ -38,13 +38,16 @@ if __name__ == '__main__':
     
     start_time = time.time()
     predictions = clf.predict(np_input_data_adjusted)
-    print('#{}'.format(time.time() - start_time))
-    
+    print('#thoi gian de phan loai tan cong{}'.format( time.time() - start_time))
+    time2 = '#{}'.format(time.time() - start_time)
     for prediction in predictions:
         output_file.write(str(prediction) + '\n')
         
     input_file.close()
     output_file.close()
-
+    start_time = time.time()
+    
     addrulessnort.add_rules()
-
+    time1 = '#{}'.format(time.time() - start_time)
+    print('#thoi gian de phan loai tan cong ' + time2 )
+    print('#thoi gian de sinh rule{}'.format(time.time() - start_time) )

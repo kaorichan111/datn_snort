@@ -1230,6 +1230,7 @@ std::vector<std::string> get_id_candidates(Packet *p)
     return id_candidates;
 }
 
+
 /*
     Auxiliary function used to classify the timeouted connections.
 */
@@ -1267,7 +1268,7 @@ void classify_connections() {
     
     /* Reads the predictions of every single connection timeouted previously. */
     std::ifstream inputFile ("/home/minh/newmljoblibtest/src/inspectors/ml_classifiers/tmp/timeouted_connections_results.txt");
-    
+    /*
     if (inputFile.is_open()) {
         std::string line;
         uint32_t index = 0;
@@ -1297,6 +1298,7 @@ void classify_connections() {
         
         inputFile.close();
     }
+    */
     
     t_connections.id.clear();
     t_connections.connections.clear();
@@ -1331,10 +1333,10 @@ void check_connections()
         time_difference = get_time_in_microseconds() - it->second.get_flowlastseen();
         int64_t duration = it->second.get_flowlastseen() - it->second.get_flowfirstseen();
         // std::cout << "Packet is null" << std::endl;
-        std:: cout << "flow so " << ++dem << "nay co thoi luong la " << duration << std::endl;
+        // std:: cout << "flow so " << ++dem << "nay co thoi luong la " << duration << std::endl;
 
         /* Assuming a default timeout value of 12 sec. */
-        if (time_difference > 1200000 || duration > 12000000)
+        if (time_difference > 1500000 || duration > 12000000)
         {
             ml_mutex.lock();
 
@@ -1383,6 +1385,6 @@ void verify_timeouts()
         std::cout << "[+] verify_timeouts (" << connections.size() << ")" << std::endl;
 
         check_connections();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+       // std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 }

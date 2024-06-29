@@ -92,6 +92,10 @@ def add_rules():
         current_sid = max_sid + 1
         print(current_sid)
         for dst_port, avcount in filtered_ports.items():
+            if avcount == 0:
+                avcount = 50
+            elif avcount > 10000:
+                avcount = 500
             rule = f'alert tcp any any -> any {dst_port} (msg:"TCP SYN Flood detected"; detection_filter:track by_dst, count {round(avcount)}, seconds 1; sid:{current_sid}; )'
             rule_without_sid = rule[:rule.index("sid:") + 4].strip()  # Bỏ phần sid để so sánh
             if rule_without_sid not in existing_rules_without_sid:
